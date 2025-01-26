@@ -21,7 +21,7 @@ jobs:
     - name: Installing Desktop Environment (wait for 10 min)
       run: sudo apt update && sudo apt install expect ubuntu-desktop
     - name: Installing Google Chrome Headless
-       run: |
+      run: |
              sudo useradd -m Ubuntu 
              sudo adduser Ubuntu sudo
              echo 'Ubuntu:1234' | sudo chpasswd
