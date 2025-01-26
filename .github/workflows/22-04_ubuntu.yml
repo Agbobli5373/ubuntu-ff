@@ -21,8 +21,8 @@ jobs:
     - name: Installing Desktop Environment (wait for 10 min)
       run: |
              sudo apt update
-             sudo apt install -y network-manager  # Add this line
-             sudo systemctl start network-manager  # Add this line
+             sudo apt install -y network-manager  
+             sudo systemctl start network-manager  
              sudo apt install -y expect ubuntu-desktop
     - name: Installing Google Chrome Headless
       run: |
