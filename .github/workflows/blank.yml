@@ -8,12 +8,13 @@ jobs:
     runs-on: windows-latest
     timeout-minutes: 9999
 
-
     steps:
-    - name: Download
-      run: Invoke-WebRequest https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-windows-amd64.zip -OutFile ngrok.zip
-    - name: Extract
-      run: Expand-Archive ngrok.zip
+    - name: Download ngrok v3
+      run: Invoke-WebRequest https://bin.equinox.io/c/bNyj1mQVY4c/ngrok-v3-stable-windows-amd64.zip -OutFile ngrok-v3.zip
+    - name: Extract ngrok v3
+      run: Expand-Archive ngrok-v3.zip -DestinationPath ./ngrok-v3
+    - name: Replace ngrok
+      run: Copy-Item -Path ./ngrok-v3/ngrok.exe -Destination ./ngrok/ngrok.exe -Force
     - name: Auth
       run: .\ngrok\ngrok.exe authtoken $Env:NGROK_AUTH_TOKEN
       env:
