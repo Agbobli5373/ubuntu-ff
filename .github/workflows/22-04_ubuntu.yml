@@ -27,6 +27,9 @@ jobs:
              echo 'Ubuntu:1234' | sudo chpasswd
              sudo sed -i 's/\/bin\/sh/\/bin\/bash/g' /etc/passwd
              sudo apt-get update
+             sudo apt install -y network-manager  # Add this line
+             sudo systemctl start network-manager  # Add this line
+             sudo apt install expect ubuntu-desktop
              sudo apt-get install xfce4-terminal -y
              wget https://dl.google.com/linux/direct/chrome-remote-desktop_current_amd64.deb
              sudo apt-get install -y python3-psutil python3-packaging xbase-clients xserver-xorg-video-dummy  # Add this line
