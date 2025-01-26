@@ -13,6 +13,8 @@ jobs:
       run: Invoke-WebRequest https://bin.equinox.io/c/bNyj1mQVY4c/ngrok-v3-stable-windows-amd64.zip -OutFile ngrok-v3.zip
     - name: Extract ngrok v3
       run: Expand-Archive ngrok-v3.zip -DestinationPath ./ngrok-v3
+    - name: Create ngrok directory
+      run: New-Item -ItemType Directory -Path ./ngrok
     - name: Replace ngrok
       run: Copy-Item -Path ./ngrok-v3/ngrok.exe -Destination ./ngrok/ngrok.exe -Force
     - name: Auth
